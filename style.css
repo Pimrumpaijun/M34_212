@@ -1,0 +1,281 @@
+/* ===== COLOR PALETTE ===== */
+
+:root {
+    --lavender: #c5a4e8;
+    --deep-purple: #65418b;
+    --dark-purple: #241b30;
+    --soft-white: #faf7ff;
+    --leaf-green: #84996b;
+}
+
+/* ===== GENERAL SETTINGS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: var(--dark-purple);
+    color: var(--soft-white);
+}
+
+/* ===== NAVIGATION BAR ===== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 28px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--lavender);
+}
+
+/* ===== HOMEPAGE BACKGROUND ===== */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 24px 90px;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 15, 30, 0.35),
+            rgba(20, 15, 30, 0.50)
+        ),
+        url("images/flower-background.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ===== CENTER TEXT ===== */
+
+.hero-content {
+    max-width: 900px;
+    animation: fadeIn 1.2s ease;
+}
+
+.subtitle {
+    color: #e0c8ff;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    color: white;
+
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    font-weight: normal;
+
+    line-height: 1.08;
+    letter-spacing: -2px;
+
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+.description {
+    color: #f1eafa;
+
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+/* ===== BUTTON ===== */
+
+.explore-button {
+    display: inline-block;
+
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+
+    padding: 15px 30px;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+
+    transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: var(--lavender);
+    border-color: var(--lavender);
+    color: var(--dark-purple);
+
+    transform: translateY(-3px);
+}
+
+/* ===== SCROLL INDICATOR ===== */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+
+    color: white;
+    opacity: 0.8;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+}
+
+/* ===== OTHER SECTIONS ===== */
+
+.content-section {
+    min-height: 55vh;
+    padding: 110px 10%;
+
+    text-align: center;
+
+    background-color: var(--dark-purple);
+}
+
+.section-label {
+    color: var(--lavender);
+
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.content-section h2 {
+    color: white;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+.content-section > p:last-child {
+    max-width: 600px;
+    margin: 0 auto;
+
+    color: #d4c9e0;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.works-section {
+    background-color: #30233d;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    padding: 30px;
+    text-align: center;
+
+    background-color: #191321;
+    color: #c5a4e8;
+
+    font-size: 0.9rem;
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE DISPLAY ===== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 22px 5%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .subtitle {
+        letter-spacing: 3px;
+        font-size: 0.7rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+}
